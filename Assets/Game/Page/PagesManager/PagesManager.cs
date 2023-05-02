@@ -14,14 +14,14 @@ public class PagesManager : MonoBehaviour
         {
             if (_instance == null)
             {
-                var currentNetworkManager = MonoBehaviour.FindObjectOfType<PagesManager>();
-                if (currentNetworkManager == null)
+                var currentPagesManager = MonoBehaviour.FindObjectOfType<PagesManager>();
+                if (currentPagesManager == null)
                 {
                     Debug.LogError("Could not find PagesManager in scene. Does it exist?");
                 }
                 else
                 {
-                    _instance = currentNetworkManager;
+                    _instance = currentPagesManager;
                 }
             }
             return _instance;

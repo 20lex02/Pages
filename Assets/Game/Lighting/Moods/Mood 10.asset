@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1359c81c64b4a64f9f6442d52e80336, type: 3}
+  m_Name: Mood 10
+  m_EditorClassIdentifier: 
+  SkyboxExposure: 4
+  SunIntensity: 1.2
+  SunAngle: {x: -0.25, y: 0.2500001, z: -0.06698732, w: -0.93301266}
+  MusicVolume: 0.9
+  WindVolume: 0.1
+  IsBlizzard: 0
+  IsSnowing: 1
+  TransitionDuration: 20

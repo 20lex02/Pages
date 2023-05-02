@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Mood : MonoBehaviour
+[CreateAssetMenu(fileName = "Mood", menuName = "Mood/Mood")]
+public class Mood : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float SkyboxExposure;
+    public float SunIntensity;
+    public Quaternion SunAngle;
+    public float MusicVolume;
+    public float WindVolume;
+    public bool IsBlizzard;
+    public bool IsSnowing;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float TransitionDuration;
 }
