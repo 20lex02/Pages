@@ -262,6 +262,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "HUD",
+            "id": "2087ac0c-124b-4838-8662-e912b74bb78c",
+            "actions": [
+                {
+                    "name": "Dismiss",
+                    "type": "Button",
+                    "id": "d2d5c03e-d914-434b-861a-6d646bd04ed9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8b88b424-d52b-4749-a3e0-e621551d8ac5",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dismiss",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6bfb1199-64d9-4515-ac59-282f2a9db42e",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dismiss",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

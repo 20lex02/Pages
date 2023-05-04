@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class PagesManager : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class PagesManager : MonoBehaviour
     [Tooltip("Event called once the player collects the set number of pages")]
     [SerializeField] private List<CollectPageNumberEvent> _onCollectEvents;
 
+    [SerializeField] private InputController _inputController;
+
     [ShowNonSerializedField] private int _pagesCollected;
     private Dictionary<int, UnityEvent[]> _onCollectEventsDict;
 
@@ -41,17 +44,18 @@ public class PagesManager : MonoBehaviour
         _onCollectEventsDict = _onCollectEvents
             .GroupBy(collectEvent => collectEvent.PageNumber)
             .ToDictionary(
-                g => g.Key, 
+                g => g.Key,
                 g => g.Select(collectEvent => collectEvent.OnCollect).ToArray()
             );
-        
-        foreach (var kp in _onCollectEventsDict)
+
+        _inputController.AddActionBinding("Dismiss", (context) =>
         {
-            print($"({kp.Key}, {kp.Value.Count()})");
-        }
+            PageHUD.Instance.DismissPage();
+            _inputController.GotoPlayMode();
+        });
     }
 
-    public void CollectPage(int id)
+    public void CollectPage(string pageText)
     {
         _pagesCollected++;
 
@@ -64,7 +68,10 @@ public class PagesManager : MonoBehaviour
             }
         }
 
+        PageHUD.Instance.ShowPage(pageText);
 
-        print($"Collected Page {id}");
+        print($"Collected Page {_pagesCollected}");
+
+        _inputController.GotoHUDMode();
     }
 }
